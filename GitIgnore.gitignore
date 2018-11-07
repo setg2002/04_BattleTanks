@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Binaries
 DerivedDataCache
 Intermediate
@@ -7,6 +8,8 @@ Saved
 .vs
 *.VC.db
 =======
+=======
+>>>>>>> Stashed changes
 # Visual Studio
 .vs/
 
