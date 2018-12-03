@@ -1,0 +1,15 @@
+Merge branch 'master' of https://github.com/setg2002/04_BattleTanks into HEAD
+
+# Conflicts:
+#	Content/BattleGround.umap
+#	Content/Mortar/Mortar_BP.uasset
+#	Content/Mortar/Turret_fancy_export_scaled_barrel.uasset
+#	Content/Tank/Tank_BP.uasset
+#	Source/BattleTanks/Private/MortarAimingComponent.cpp
+#	Source/BattleTanks/Private/MortarBarrel.cpp
+#	Source/BattleTanks/Private/MortarTurret.cpp
+#	Source/BattleTanks/Public/MortarAimingComponent.h
+#	Source/BattleTanks/Public/MortarBarrel.h
+#	Source/BattleTanks/Public/MortarTurret.h
+#	Source/BattleTanks/Public/TankBarrel.h
+#	Source/BattleTanks/Public/TankTurret.h

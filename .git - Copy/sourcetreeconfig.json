@@ -1,0 +1,33 @@
+{
+  "$id": "23",
+  "AutoRefresh": true,
+  "AutoRefreshRemotes": true,
+  "CommitTextLinks": null,
+  "DraftCommitMsg": "",
+  "IncomingSavedCount": 0,
+  "LastCheckedRemotes": "2018-12-03T12:55:10.5617583-07:00",
+  "LastUsedView": 1,
+  "LogBranchFilterIndex": 0,
+  "OutgoingSavedCount": 0,
+  "RemoteProjectLinks": [
+    {
+      "$id": "24",
+      "BaseUrl": "https://www.github.com",
+      "Identifier": "setg2002/04_BattleTanks",
+      "RemoteName": "origin",
+      "Type": 0,
+      "Username": null,
+      "CloneUrl": null,
+      "DisplayName": "origin: https://www.github.com"
+    }
+  ],
+  "SidebarExpandedItems": [
+    "File Status",
+    "Branches",
+    "Remotes",
+    "Remotes/origin",
+    "Stashes"
+  ],
+  "SidebarWidth": 210.0,
+  "SubtreeLinks": []
+}
