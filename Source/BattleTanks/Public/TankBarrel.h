@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Notice
 
 #pragma once
 
@@ -6,9 +6,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "TankBarrel.generated.h"
 
-/**
- * 
- */
+
 UCLASS( meta = (BlueprintSpawnableComponent) )
 class BATTLETANKS_API UTankBarrel : public UStaticMeshComponent
 {
@@ -20,12 +18,11 @@ public:
 	
 private:
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
-		float MaxDegreesPerSecond = 10; // Default
+	float MaxDegreesPerSecond = 10; // Default
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
-		float MaxElevationDegrees = 35;
+	float MaxElevationDegrees = 35;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
-		float MinElevationDegrees = -2;
-
+	float MinElevationDegrees = -2;
 };
