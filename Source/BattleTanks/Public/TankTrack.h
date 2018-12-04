@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Notice
 
 #pragma once
 
@@ -9,6 +9,7 @@
 /**
  *  TankTrack is used to set a maxinum driving force, and to apply forces to the tank
  */
+
 UCLASS( meta = (BlueprintSpawnableComponent) )
 class BATTLETANKS_API UTankTrack : public UStaticMeshComponent
 {
