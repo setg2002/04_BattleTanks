@@ -40,7 +40,7 @@ public:
 	EMortarFiringState GetFiringState() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Firing")
-	int GetRoundsLeft() const;
+	int32 GetRoundsLeft() const;
 
 
 protected:
@@ -76,5 +76,5 @@ private:
 
 	FVector AimDirection;
 
-	int RoundsLeft = 5;
+	int32 RoundsLeft = 5;
 };

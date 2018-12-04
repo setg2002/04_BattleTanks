@@ -49,7 +49,7 @@ void UMortarAimingComponent::TickComponent(float DeltaTime, enum ELevelTick Tick
 	}
 }
 
-int UMortarAimingComponent::GetRoundsLeft() const
+int32 UMortarAimingComponent::GetRoundsLeft() const
 {
 	return RoundsLeft;
 }
