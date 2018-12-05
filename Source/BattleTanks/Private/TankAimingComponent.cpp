@@ -129,5 +129,10 @@ void UTankAimingComponent::Fire()
 		Projectile->LaunchProjectile(LaunchSpeed);
 		LastFireTime = FPlatformTime::Seconds();
 		RoundsLeft--;
+
+		auto ForceApplied = -(Barrel->GetForwardVector()) * LaunchSpeed * 10000;
+		auto ForceLocation = Barrel->GetComponentLocation();
+		auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+		TankRoot->AddForceAtLocation(ForceApplied, ForceLocation);
 	}
 }
