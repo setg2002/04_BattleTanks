@@ -29,7 +29,7 @@ void UTankTrack::ApplySidewaysForce()
 	auto DeltaTime = GetWorld()->GetDeltaSeconds();
 	auto CorrectionAcceleration = -SlippageSpeed / DeltaTime * GetRightVector();
 
-	// Calculate and apply sideways (F = m a)
+	// Calculate and apply sideways (F = m * a)
 	auto TankRoot = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
 	auto CorrectionForce = (TankRoot->GetMass() * CorrectionAcceleration) / 2; // Two tracks
 	TankRoot->AddForce(CorrectionForce);
