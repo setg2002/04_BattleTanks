@@ -16,8 +16,9 @@ class BATTLETANKS_API UTankTrack : public UStaticMeshComponent
 	GENERATED_BODY()
 
 public:
-	// Called by the engine when actor damage is dealt
-	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser);
+	//TODO Make tracks take damage seperatly from tank body
+	// Called by the engine when damage is dealt to ACTOR not StaticMeshComponent
+	//virtual float TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser);
 
 	// Sets a throttle between -1 and +1
 	UFUNCTION(BlueprintCallable, Category = "Input")
@@ -36,11 +37,11 @@ public:
 private:
 	UTankTrack();
 
-	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	/*UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	int32 StartingTrackHealth = 50;
 
 	UPROPERTY(VisibleAnywhere, Category = "Health")
-	int32 CurrentHealth = StartingTrackHealth;
+	int32 CurrentHealth = StartingTrackHealth;*/
 
 	virtual void BeginPlay() override;
 

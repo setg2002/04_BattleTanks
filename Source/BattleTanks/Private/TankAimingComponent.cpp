@@ -14,8 +14,17 @@ UTankAimingComponent::UTankAimingComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
+	const static ConstructorHelpers::FClassFinder<AProjectile> Proj(TEXT("/Game/Projectile/Projectile_BP"));
+	if (Proj.Class)
+	{
+		ProjectileBlueprint = Proj.Class;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Couldn't find projectile class"))
+	}
 }
+
 
 void UTankAimingComponent::BeginPlay()
 {

@@ -25,8 +25,9 @@ void UTankTrack::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UP
 	CurrentThrottle = 0;
 }
 
-float UTankTrack::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser)
+/*float UTankTrack::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Track Hit"))
 	int32 DamagePoints = FPlatformMath::RoundToInt(DamageAmount);
 	int32 DamageToApply = FMath::Clamp(DamagePoints, 0, CurrentHealth);
 	CurrentHealth -= DamageToApply;
@@ -37,7 +38,7 @@ float UTankTrack::TakeDamage(float DamageAmount, struct FDamageEvent const & Dam
 		DestroyComponent();
 	}
 	return DamageToApply;
-}
+}*/
 
 void UTankTrack::ApplySidewaysForce()
 {
