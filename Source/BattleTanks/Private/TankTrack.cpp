@@ -17,9 +17,26 @@ void UTankTrack::BeginPlay()
 
 void UTankTrack::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
 {
+	auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+	CurrentSpeed = TankRoot->GetComponentVelocity();
+
 	DriveTrack();
 	ApplySidewaysForce();
 	CurrentThrottle = 0;
+}
+
+float UTankTrack::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser)
+{
+	int32 DamagePoints = FPlatformMath::RoundToInt(DamageAmount);
+	int32 DamageToApply = FMath::Clamp(DamagePoints, 0, CurrentHealth);
+	CurrentHealth -= DamageToApply;
+
+	if (CurrentHealth <= 0)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Track died"))
+		DestroyComponent();
+	}
+	return DamageToApply;
 }
 
 void UTankTrack::ApplySidewaysForce()
@@ -42,8 +59,11 @@ void UTankTrack::SetThrottle(float Throttle)
 
 void UTankTrack::DriveTrack()
 {
-	auto ForceApplied = GetForwardVector() * CurrentThrottle * TrackMaxDrivingForce;
-	auto ForceLocation = GetComponentLocation();
-	auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
-	TankRoot->AddForceAtLocation(ForceApplied, ForceLocation);
+	if ((CurrentSpeed.X < MaxSpeed) && (CurrentSpeed.X > -MaxSpeed))
+	{
+		auto ForceApplied = GetForwardVector() * CurrentThrottle * TrackMaxDrivingForce;
+		auto ForceLocation = GetComponentLocation();
+		auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+		TankRoot->AddForceAtLocation(ForceApplied, ForceLocation);
+	}
 }

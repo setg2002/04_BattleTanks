@@ -16,9 +16,18 @@ class BATTLETANKS_API UTankTrack : public UStaticMeshComponent
 	GENERATED_BODY()
 
 public:
+	// Called by the engine when actor damage is dealt
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser);
+
 	// Sets a throttle between -1 and +1
 	UFUNCTION(BlueprintCallable, Category = "Input")
 	void SetThrottle(float Throttle);
+
+	UPROPERTY(VisibleAnywhere, Category = "Setup")
+	FVector CurrentSpeed;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	float MaxSpeed = 800.f;
 
 	// Max force per track, in Newtons
 	UPROPERTY(EditDefaultsOnly)
@@ -26,6 +35,12 @@ public:
 	
 private:
 	UTankTrack();
+
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	int32 StartingTrackHealth = 50;
+
+	UPROPERTY(VisibleAnywhere, Category = "Health")
+	int32 CurrentHealth = StartingTrackHealth;
 
 	virtual void BeginPlay() override;
 
