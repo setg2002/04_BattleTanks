@@ -17,7 +17,7 @@ class BATTLETANKS_API UTankTrack : public UStaticMeshComponent
 
 public:
 	//TODO Make tracks take damage seperatly from tank body
-	// Called by the engine when damage is dealt to ACTOR not StaticMeshComponent
+	//Called by the engine when damage is dealt to ACTOR not StaticMeshComponent
 	//virtual float TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser);
 
 	// Sets a throttle between -1 and +1
@@ -25,7 +25,7 @@ public:
 	void SetThrottle(float Throttle);
 
 	UPROPERTY(VisibleAnywhere, Category = "Setup")
-	FVector CurrentSpeed;
+	float CurrentSpeed;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	float MaxSpeed = 800.f;
@@ -37,7 +37,7 @@ public:
 private:
 	UTankTrack();
 
-	/*UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	/*UPROPERTY(EditDefaultsOnly, Category = "Health")
 	int32 StartingTrackHealth = 50;
 
 	UPROPERTY(VisibleAnywhere, Category = "Health")
@@ -45,12 +45,7 @@ private:
 
 	virtual void BeginPlay() override;
 
-	void ApplySidewaysForce();
+	TArray<class ASpringWheel*> GetWheels() const;
 
-	UFUNCTION()
-	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
-
-	void DriveTrack();
-
-	float CurrentThrottle = 0;
+	void DriveTrack(float CurrentThrottle);
 };
