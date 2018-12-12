@@ -28,7 +28,7 @@ public:
 	float CurrentSpeed;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
-	float MaxSpeed = 800.f;
+	float MaxSpeed = 1000.f;
 
 	// Max force per track, in Newtons
 	UPROPERTY(EditDefaultsOnly)

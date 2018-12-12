@@ -59,10 +59,7 @@ void UTankTrack::SetThrottle(float Throttle)
 
 void UTankTrack::DriveTrack(float CurrentThrottle)
 {
-	auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
-	CurrentSpeed = TankRoot->GetComponentVelocity().X;
-
-	UE_LOG(LogTemp, Warning, TEXT("%f"), CurrentSpeed)
+	CurrentSpeed = GetComponentVelocity().X;
 
 	if ((CurrentSpeed < MaxSpeed) && (CurrentSpeed > -MaxSpeed))
 	{
